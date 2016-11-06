@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-6">
+          <form class="well">
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" class="form-control" id="company" ng-model="form.company">
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" ng-model="form.title">
+            </div>
+            <div class="form-group">
+                <label for="startTime">Start Time</label>
+                <input type="text" class="form-control" id="startTime" ng-model="form.timePeriod.start">
+            </div>
+            <div class="form-group">
+                <label for="endtime">End Time</label>
+                <input type="text" class="form-control" id="street" ng-model="form.timePeriod.end">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="textarea" class="form-control" id="description" ng-model="form.description">
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-success" ng-click="addToDatabase()">Add Experience</button>
+                <button type="submit" class="btn btn-success" ng-click="editExperienceByCompany()">Edit Experience</button>
+            </div>
+            <br>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+       <div id="experience-table">
+        <table class="table table-hover">
+            <thead>
+                <th>Experience</th>
+                <th><i class="fa fa-trash" ng-click="deleteAll()"></i></th>
+
+            </thead>
+            <tbody ui:sortable ng:model="experiences">
+            <tr ng-repeat="experience in experiences | startfrom:(currentPage - 1) * pageSize | limitTo: pageSize" style="cursor: move;">
+                <td>{{experience.title}}<br>
+                {{experience.company}}</br>
+                {{experience.timePeriod.start}} to {{experience.timePeriod.end}}</br>
+                {{experience.description}}</td>
+                <td><i class="fa fa-trash" ng-click="delete($index)"></i></td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+        <pagination total-items="experiences.length" ng-model="currentPage" items-per-page="pageSize"></pagination>
+    </div>
+
+</div>
