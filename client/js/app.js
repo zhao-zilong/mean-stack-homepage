@@ -8,8 +8,8 @@ var myApp = angular.module('myApp', [
     'ui']).
     config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
-        $routeProvider.when('/home', {templateUrl: '/partials/about.html', controller: 'aboutController'});
-        $routeProvider.when('/about', {templateUrl: '/partials/home.html', controller: 'homeController'});
+        $routeProvider.when('/home', {templateUrl: '/partials/home.html', controller: 'homeController'});
+        $routeProvider.when('/about', {templateUrl: '/partials/about.html', controller: 'aboutController'});
         $routeProvider.when('/contact', {templateUrl: '/partials/contact.html', controller: 'contactController'});
         $routeProvider.when('/resume', {templateUrl: '/partials/resume.html', controller: 'resumeController'});
         $routeProvider.when('/project', {templateUrl: '/partials/project.html', controller: 'chatController'});
