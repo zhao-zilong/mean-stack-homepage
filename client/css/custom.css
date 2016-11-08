@@ -15,7 +15,7 @@ tr.ng-enter{
 }
 tr.ng-leave{
     animation: bounceOut 1s;
-    
+
 }
 
 .user-window{
@@ -36,3 +36,29 @@ tr.ng-leave{
 ul {
     list-style-type: none;
 }
+
+.navbar-brand {
+    padding-top:4px !important;
+    padding-bottom:4px !important;
+    height: 45px;
+}
+
+.navbar{
+    background:rgba(0,0,0,0.2);
+    min-height:40px;
+}
+
+.navbar .nav >li > a:visited{
+    color: white;
+    background-color: transparent;
+}
+.navbar .nav >.active > a{
+    color: white !important;
+    background-color: transparent !important;
+}
+
+.navbar .nav > li > a:hover {
+    color: white;
+    background:rgba(0,0,0,0.4);
+}
+.navbar li { color: #000 } 
